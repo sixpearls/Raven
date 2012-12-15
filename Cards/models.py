@@ -31,6 +31,7 @@ class Card(models.Model):
   name = models.CharField()
   description = models.TextField()
   game = models.ForeignKey(Game)
+  number = models.IntegerField()
 
   front_text = models.TextField()
   back_text = models.TextField()
@@ -100,6 +101,9 @@ class Stack(CardMetaMixin):
   column = models.IntegerField()
   row = models.IntegerField()
 
+  # flags for available operations? operations 
+  # (shuffle, pick from top, etc.) should probably end up in the manager
+
 class StackCardMetaClass(model.ModelBase):
   def __new__(cls, name, bases, attrs):
       this = super(StackCardMetaClass, cls).__new__(cls, name, bases, attrs)
@@ -115,6 +119,8 @@ class StackCard(CardMetaMixin):
   stack = models.ForeignKey(Stack)
   card = models.ForeignKey(Card)
   order = models.IntegerField()
+  # Should we have some kind of stack of stacks? The only example I can think of
+  # is for the corp's "servers" in Netrunner.
 
 
 
