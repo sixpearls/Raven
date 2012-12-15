@@ -59,7 +59,27 @@ class TablePlayers(models.Model):
   Relate users and table
   """
   table = models.ForeignKey(Table)
-  players = models.ForeignKey('auth.User')
+  player = models.ForeignKey('auth.User')
+  # may need to switch this so it can beither a user or a session... maybe session
+  # already has an optional user?
+
+class TableAction(models.Model):
+  """
+  Logging for table actions
+  """
+  ACTION_CHOICES = (
+    (1, 'move_card'),
+    (1, 'move_card'),
+    )
+  table = models.ForeignKey(Table)
+  player = models.ForeignKey()
+  cards = models.ForeignKey('CardStack') 
+  # moving multiple cards generates multiple actions
+  old_stack = models.ForeignKey('Stack',blank=True,null=True)
+  new_stack = models.ForeignKey('Stack',blank=True,null=True)
+  action = models.IntegerField(choices=ACTION_CHOICES)
+
+
 
 class CardMetaMixin(models.Model):
   """
@@ -68,15 +88,15 @@ class CardMetaMixin(models.Model):
   HORIZONTAL = 'h'
   VERTICAL = 'v'
   ORIENTATION_CHOICES = (
-    ('h', 'horizontal'),
-    ('v', 'vertical'),
+    (HORIZONTAL, 'horizontal'),
+    (VERTICAL, 'vertical'),
   )
 
   UP = 'u'
   DOWN = 'd'
   FACING_CHOICES = (
-    ('u', 'up'),
-    ('d', 'down'),
+    (UP, 'up'),
+    (DOWN, 'down'),
   )
 
   orientation = models.CharField(max_length=1,choices=ORIENTATION_CHOICES,default=VERTICAL)
@@ -92,17 +112,21 @@ class Stack(CardMetaMixin):
   While playing, cards belong in Stacks. Provides default positioning for the stack.
   """
   name = models.CharField()
-  player = models.ForeignKey('auth.User') # which player owns the stack, if any
+  player = models.ForeignKey('auth.User', blank=True, null=True) 
+  # which player owns the stack, if any. could be used for hand and player space.
+  # null --> central player area.
   is_hand = models.BooleanField() 
   # if it's a "hand" stack, cards are face up to the player that owns the stack
-  # and face_down if it's away
+  # and "face down" to those who are away
 
-  # some kind of physical position? relative to the "table."   
+  # some kind of physical position? relative to the "table."
   column = models.IntegerField()
   row = models.IntegerField()
 
-  # flags for available operations? operations 
-  # (shuffle, pick from top, etc.) should probably end up in the manager
+  # flags for available operations? operations should probably end up in the StackCard manager
+  # shuffle, move from top, move from bottom, move random?, move specific
+  # change card orientation, change card facing/direction (any picked), look at all cards,
+  # optional: look at face up cards? This could just be in the UI, and not get recorded
 
 class StackCardMetaClass(model.ModelBase):
   def __new__(cls, name, bases, attrs):
@@ -115,8 +139,10 @@ class StackCard(CardMetaMixin):
   """
   Relate Cards and Stacks. Provides individual positioning, order.
   """
-  __metaclass__ = StackCardMetaClass
-  stack = models.ForeignKey(Stack)
+  __metaclass__ = StackCardMetaClass 
+  # allow facing and orientation to be blank... might be "better" to have the parent 
+  # class allow blanks, and have "Stack"s clean require a value. http://stackoverflow.com/a/8523024/854909
+  stack = models.ForeignKey(Stack, related_name="cards")
   card = models.ForeignKey(Card)
   order = models.IntegerField()
   # Should we have some kind of stack of stacks? The only example I can think of
