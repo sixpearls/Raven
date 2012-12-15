@@ -1,6 +1,6 @@
 # Django settings for Raven project.
 
-import local_settings
+from local_settings import *
 
 ADMINS = (
     ('Ben', 'ben@sixpearls.com'),
