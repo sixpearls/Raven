@@ -7,12 +7,25 @@ class Game(models.Model):
 
   Need to think about a way to represent a "game setup"-- either Stacks
   pre-filled and/or ways to automate filling initial Stacks.
+
+  Automation: some model that looks like "TableActions" but creates a template. 
+  So TA's need to be well designed. Maybe also have templated dependent on # players?
+  Too much logic --> not in DB, should be a python script or something
+
+  Also limit (or suggest limits) to what stacks are available and/or where stacks can be expanded into?
+
+
   examples: 
   
-  Poker "setup" would just be the 52 Cards in a single stack, shuffled.
+  Poker "setup" would just be the 52 Cards in a single stack, shuffled. Distribute starting
+  chips (tokens) to each player.
 
   Netrunner "setup" would help you choose (or build) your starting deck
-  and then help create the initial stacks.
+  and then help create the initial stacks (servers for corp, tools for hacker, etc).
+
+  Bohnanza "setup" would automate discarding (into "box" stack) appropriate cards for # of
+  players, deal initial hands, etc.
+
   """
   name = models.CharField()
   description = models.TextField()
@@ -22,7 +35,6 @@ class Game(models.Model):
 
   card_back_text_default = models.TextField()
   card_back_image_default = models.ImageField()
-  #
 
 class Card(models.Model):
   """
@@ -65,7 +77,7 @@ class TablePlayers(models.Model):
 
 class TableAction(models.Model):
   """
-  Logging for table actions
+  Logging for table actions - maybe just lits Manager Functions?
   """
   ACTION_CHOICES = (
     (1, 'move_card'),
@@ -74,7 +86,7 @@ class TableAction(models.Model):
   table = models.ForeignKey(Table)
   player = models.ForeignKey()
   cards = models.ForeignKey('CardStack') 
-  # moving multiple cards generates multiple actions
+  # moving multiple cards generates multiple actions?
   old_stack = models.ForeignKey('Stack',blank=True,null=True)
   new_stack = models.ForeignKey('Stack',blank=True,null=True)
   action = models.IntegerField(choices=ACTION_CHOICES)
@@ -115,7 +127,7 @@ class Stack(CardMetaMixin):
   player = models.ForeignKey('auth.User', blank=True, null=True) 
   # which player owns the stack, if any. could be used for hand and player space.
   # null --> central player area.
-  is_hand = models.BooleanField() 
+  is_hand = models.BooleanField(default=False) 
   # if it's a "hand" stack, cards are face up to the player that owns the stack
   # and "face down" to those who are away
 
