@@ -81,8 +81,6 @@ class Table(models.Model):
       for i in range(card.number):
         StackCard(stack=deck_stack,card=card,table=self,order=order).save()
         order += 1
-    stackcard.order[0]
-
 
 class TablePlayers(models.Model):
   """
