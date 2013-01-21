@@ -72,6 +72,16 @@ class Table(models.Model):
   """
   game = models.ForeignKey(Game)
 
+  def create_deck_stack(self):
+    deck_stack = Stack(column=0,row=0,table=self)
+    deck_stack.save()
+    order = 0
+    for card in self.game.cards.all():
+      for i in range(card.number):
+        StackCard(stack=deck_stack,card=card,table=self,order=order).save()
+        order += 1
+
+
 class TablePlayers(models.Model):
   """
   Relate users and table
