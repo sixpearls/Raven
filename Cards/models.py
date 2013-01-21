@@ -82,14 +82,22 @@ class Table(models.Model):
         StackCard(stack=deck_stack,card=card,table=self,order=order).save()
         order += 1
 
+  def create_player_stack(self):
+    for player in self.players.all()
+      player_stack = Stack(column=0,row=0,table=self,player=player)
+      player_stack.save()
+
+
 class TablePlayers(models.Model):
   """
   Relate users and table
   """
-  table = models.ForeignKey(Table)
+  table = models.ForeignKey(Table,related_name='players')
   player = models.ForeignKey('auth.User')
   # may need to switch this so it can beither a user or a session... maybe session
   # already has an optional user?
+  def __unicode__(self):
+    return self.player.username
 
 class TableAction(models.Model):
   """
