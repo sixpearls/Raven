@@ -1,0 +1,742 @@
+[
+  {
+    "pk": 1, 
+    "model": "Cards.game", 
+    "fields": {
+      "name": "Standard Deck", 
+      "min_players": 2, 
+      "max_players": 8, 
+      "card_back_image_default": "", 
+      "card_back_text_default": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 1, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "ace of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 2, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "2 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 3, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "3 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 4, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "4 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 5, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "5 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 6, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "6 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 7, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "7 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 8, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "8 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 9, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "9 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 10, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "10 of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 11, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "jack of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 12, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "queen of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 13, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "king of diamonds", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 14, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "ace of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 15, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "2 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 16, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "3 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 17, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "4 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 18, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "5 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 19, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "6 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 20, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "7 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 21, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "8 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 22, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "9 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 23, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "10 of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 24, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "jack of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 25, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "queen of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 26, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "king of clubs", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 27, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "ace of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 28, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "2 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 29, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "3 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 30, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "4 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 31, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "5 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 32, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "6 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 33, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "7 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 34, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "8 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 35, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "9 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 36, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "10 of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 37, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "jack of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 38, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "queen of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 39, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "king of hearts", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 40, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "ace of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 41, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "2 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 42, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "3 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 43, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "4 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 44, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "5 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 45, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "6 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 46, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "7 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 47, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "8 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 48, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "9 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 49, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "10 of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 50, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "jack of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 51, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "queen of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }, 
+  {
+    "pk": 52, 
+    "model": "Cards.card", 
+    "fields": {
+      "back_text": "", 
+      "name": "king of spades", 
+      "front_image": "", 
+      "number": 1, 
+      "front_text": "", 
+      "game": 1, 
+      "back_image": "", 
+      "description": ""
+    }
+  }
+]

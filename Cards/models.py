@@ -36,6 +36,9 @@ class Game(models.Model):
   card_back_text_default = models.TextField()
   card_back_image_default = models.ImageField(upload_to='card_default/') # change this to a function returning game name
 
+  def __unicode__(self):
+    return self.name
+
 class Card(models.Model):
   """
   Card describes a card available in game
@@ -43,13 +46,16 @@ class Card(models.Model):
   name = models.CharField(max_length=100)
   description = models.TextField()
   game = models.ForeignKey(Game,related_name="cards")
-  number = models.IntegerField()
+  number = models.IntegerField(default=1)
 
   front_text = models.TextField()
   back_text = models.TextField()
 
   front_image = models.ImageField(upload_to='card/')
   back_image = models.ImageField(upload_to='card/')
+
+  def __unicode__(self):
+    return self.name
 
 class Token(models.Model):
   """
