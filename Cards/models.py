@@ -72,6 +72,7 @@ class Table(models.Model):
   Where one plays a game
   """
   game = models.ForeignKey(Game)
+  players = models.ManyToManyField('auth.User',through='TablePlayers')
 
   def create_deck_stack(self):
     deck_stack = Stack(column=0,row=0,table=self)
