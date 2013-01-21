@@ -84,7 +84,7 @@ class Table(models.Model):
         order += 1
 
   def create_player_stack(self):
-    for player in self.players.all()
+    for player in self.players.all():
       player_stack = Stack(column=0,row=0,table=self,player=player)
       player_stack.save()
 
@@ -93,7 +93,7 @@ class TablePlayers(models.Model):
   """
   Relate users and table
   """
-  table = models.ForeignKey(Table,related_name='players')
+  table = models.ForeignKey(Table)
   player = models.ForeignKey('auth.User')
   # may need to switch this so it can beither a user or a session... maybe session
   # already has an optional user?
