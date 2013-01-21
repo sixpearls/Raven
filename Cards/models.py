@@ -1,3 +1,4 @@
+import random
 from django.db import models
 
 # Game, Card, and Token represent what is possible in a game
@@ -80,6 +81,7 @@ class Table(models.Model):
       for i in range(card.number):
         StackCard(stack=deck_stack,card=card,table=self,order=order).save()
         order += 1
+    stackcard.order[0]
 
 
 class TablePlayers(models.Model):
@@ -153,6 +155,13 @@ class Stack(CardMetaMixin):
   # shuffle, move from top, move from bottom, move random?, move specific
   # change card orientation, change card facing/direction (any picked), look at all cards,
   # optional: look at face up cards? This could just be in the UI, and not get recorded
+  def shuffle(self):
+    shuffled_cards = list(self.cards.all())
+    random.shuffle(shuffled_cards)
+    for i,card in enumerate(shuffled_cards):
+      card.order = i
+      card.save()
+
 
 class StackCardMetaClass(models.base.ModelBase):
   def __new__(cls, name, bases, attrs):
@@ -173,6 +182,8 @@ class StackCard(CardMetaMixin):
   order = models.IntegerField()
   # Should we have some kind of stack of stacks? The only example I can think of
   # is for the corp's "servers" in Netrunner.
+  def __unicode__(self):
+    return self.card.__unicode__()
 
 
 
