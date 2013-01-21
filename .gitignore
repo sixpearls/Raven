@@ -1,2 +1,3 @@
 *.pyc
+test_db
 Raven/local_settings.py

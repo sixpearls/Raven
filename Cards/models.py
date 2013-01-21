@@ -27,38 +27,38 @@ class Game(models.Model):
   players, deal initial hands, etc.
 
   """
-  name = models.CharField()
+  name = models.CharField(max_length=50)
   description = models.TextField()
 
   min_players = models.IntegerField()
   max_players = models.IntegerField()
 
   card_back_text_default = models.TextField()
-  card_back_image_default = models.ImageField()
+  card_back_image_default = models.ImageField(upload_to='card_default/') # change this to a function returning game name
 
 class Card(models.Model):
   """
   Card describes a card available in game
   """
-  name = models.CharField()
+  name = models.CharField(max_length=100)
   description = models.TextField()
-  game = models.ForeignKey(Game)
+  game = models.ForeignKey(Game,related_name="cards")
   number = models.IntegerField()
 
   front_text = models.TextField()
   back_text = models.TextField()
 
-  front_image = models.ImageField()
-  back_image = models.ImageField()
+  front_image = models.ImageField(upload_to='card/')
+  back_image = models.ImageField(upload_to='card/')
 
 class Token(models.Model):
   """
   Token describes a token available in game
   """
-  name = models.CharField()
+  name = models.CharField(max_length=100)
   description = models.TextField()
   game = models.ForeignKey(Game)
-  image = models.ImageField()
+  image = models.ImageField(upload_to='card/')
 
 class Table(models.Model):
   """
@@ -84,14 +84,12 @@ class TableAction(models.Model):
     (1, 'move_card'),
     )
   table = models.ForeignKey(Table)
-  player = models.ForeignKey()
-  cards = models.ForeignKey('CardStack') 
+  player = models.ForeignKey('auth.User')
+  cards = models.ForeignKey('StackCard') 
   # moving multiple cards generates multiple actions?
-  old_stack = models.ForeignKey('Stack',blank=True,null=True)
-  new_stack = models.ForeignKey('Stack',blank=True,null=True)
+  old_stack = models.ForeignKey('Stack',blank=True,null=True,related_name='direct_actions')
+  new_stack = models.ForeignKey('Stack',blank=True,null=True,related_name='indirect_actions')
   action = models.IntegerField(choices=ACTION_CHOICES)
-
-
 
 class CardMetaMixin(models.Model):
   """
@@ -123,7 +121,7 @@ class Stack(CardMetaMixin):
   """
   While playing, cards belong in Stacks. Provides default positioning for the stack.
   """
-  name = models.CharField()
+  name = models.CharField(blank=True,max_length=100)
   player = models.ForeignKey('auth.User', blank=True, null=True) 
   # which player owns the stack, if any. could be used for hand and player space.
   # null --> central player area.
@@ -140,7 +138,7 @@ class Stack(CardMetaMixin):
   # change card orientation, change card facing/direction (any picked), look at all cards,
   # optional: look at face up cards? This could just be in the UI, and not get recorded
 
-class StackCardMetaClass(model.ModelBase):
+class StackCardMetaClass(models.base.ModelBase):
   def __new__(cls, name, bases, attrs):
       this = super(StackCardMetaClass, cls).__new__(cls, name, bases, attrs)
       this._meta.get_field('facing').blank = True 
